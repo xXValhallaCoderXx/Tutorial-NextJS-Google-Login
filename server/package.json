@@ -1,0 +1,11 @@
+{
+  "name": "Tutorial-React-Server-Google-Login",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:xXValhallaCoderXx/Tutorial-React-Server-Google-Login.git",
+  "author": "Renate <renate.gouveia@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
