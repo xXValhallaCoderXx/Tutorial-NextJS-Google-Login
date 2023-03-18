@@ -15,7 +15,7 @@ export const baseApi = createApi({
       query: ({ credential }) => ({
         url: `auth/login`,
         method: "POST",
-        body: credential,
+        body: { credential },
       }),
     }),
   }),
