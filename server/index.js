@@ -6,6 +6,7 @@ const port = 3001;
 const { validateGoogleAuth } = require("./middleware/google-auth-validate");
 
 app.use(cors());
+app.use(express.json());
 
 /***************** Note ************************* 
     For the sake of this demo we are adding logic 
@@ -16,6 +17,10 @@ app.use(cors());
 
 app.get("/api/login", validateGoogleAuth(), (req, res) => {
   res.json({ data: "helssssslo" });
+});
+
+app.post("/api/auth/login", validateGoogleAuth(), (req, res) => {
+  res.json({ data: req.user });
 });
 
 app.get("/api/user/profile", validateGoogleAuth(), (req, res) => {

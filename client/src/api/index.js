@@ -11,7 +11,14 @@ export const baseApi = createApi({
       },
       providesTags: ["auth"],
     }),
+    loginUser: builder.mutation({
+      query: ({ credential }) => ({
+        url: `auth/login`,
+        method: "POST",
+        body: credential,
+      }),
+    }),
   }),
 });
 
-export const { useGetProfileQuery } = baseApi;
+export const { useGetProfileQuery, useLoginUserMutation } = baseApi;
