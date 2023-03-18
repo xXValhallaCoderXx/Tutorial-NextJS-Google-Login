@@ -1,6 +1,9 @@
 import { Button, Box, Heading, Flex } from "@chakra-ui/react";
+import { useGetProfileQuery } from "../../api";
 
 const LoginContainer = () => {
+  const { data } = useGetProfileQuery();
+  console.log("DATA: ", data);
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
       <Heading>Google Login Demo</Heading>

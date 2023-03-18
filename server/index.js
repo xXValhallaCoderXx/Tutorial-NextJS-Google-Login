@@ -1,9 +1,25 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3001;
 
-app.get("/login", (req, res) => {
-  res.send("Hello World!");
+const { validateGoogleAuth } = require("./middleware/google-auth-validate");
+
+app.use(cors());
+
+/***************** Note ************************* 
+    For the sake of this demo we are adding logic 
+    in our controllers. In a real production 
+    application - this should be added in the 
+    services layer
+*************************************************/
+
+app.get("/api/login", validateGoogleAuth(), (req, res) => {
+  res.json({ data: "helssssslo" });
+});
+
+app.get("/api/user/profile", validateGoogleAuth(), (req, res) => {
+  res.json({ data: "helssssslo" });
 });
 
 app.listen(port, () => {
