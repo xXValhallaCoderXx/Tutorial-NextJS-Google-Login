@@ -20,10 +20,6 @@ app.use(express.json());
     services layer
 *************************************************/
 
-app.get("/api/login", validateGoogleAuth(), (req, res) => {
-  res.json({ data: "helssssslo" });
-});
-
 /***************** Note ************************* 
     We are just using a JSON DB for simplicity 
 *************************************************/
@@ -43,10 +39,6 @@ app.post("/api/auth/login", validateGoogleAuth(), async (req, res) => {
     const user = await db.getData(`/${req.user.email}`);
     res.json({ data: user });
   }
-});
-
-app.get("/api/user/profile", validateGoogleAuth(), (req, res) => {
-  res.json({ data: "helssssslo" });
 });
 
 app.listen(port, () => {
