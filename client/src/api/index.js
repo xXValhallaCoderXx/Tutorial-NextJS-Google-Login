@@ -5,12 +5,6 @@ export const baseApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/api/" }),
   tagTypes: ["auth"],
   endpoints: (builder) => ({
-    getProfile: builder.query({
-      query(id) {
-        return `user/profile`;
-      },
-      providesTags: ["auth"],
-    }),
     loginUser: builder.mutation({
       query: ({ credential }) => ({
         url: `auth/login`,
@@ -21,4 +15,4 @@ export const baseApi = createApi({
   }),
 });
 
-export const { useGetProfileQuery, useLoginUserMutation } = baseApi;
+export const { useLoginUserMutation } = baseApi;

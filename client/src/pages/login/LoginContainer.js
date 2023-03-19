@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Button, Box, Heading } from "@chakra-ui/react";
 import { useLoginUserMutation } from "../../api";

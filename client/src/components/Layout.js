@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Button, Box, Heading, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 const RouteGuard = () => {
   return (
