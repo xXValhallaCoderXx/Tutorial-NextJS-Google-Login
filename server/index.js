@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { JsonDB } = require("node-json-db");
 const { Config } = require("node-json-db/dist/lib/JsonDBConfig");
 
@@ -35,7 +36,7 @@ app.post("/api/auth/login", validateGoogleAuth(), async (req, res) => {
     res.json({ data: user });
   } catch (err) {
     // User does not exist - lets create
-    db.push(`/${req.user.email}`, { email: req.user.email }, false);
+    db.push(`/${req.user.email}`, { user: req.user }, false);
     const user = await db.getData(`/${req.user.email}`);
     res.json({ data: user });
   }
